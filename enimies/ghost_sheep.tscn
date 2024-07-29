@@ -1,0 +1,148 @@
+[gd_scene load_steps=21 format=3 uid="uid://dp52126sjdjas"]
+
+[ext_resource type="Script" path="res://enimies/enimy.gd" id="1_a5n4o"]
+[ext_resource type="PackedScene" uid="uid://bwg84lmidne25" path="res://misc/skull.tscn" id="2_lxg8g"]
+[ext_resource type="Texture2D" uid="uid://diqthn68qwr8s" path="res://addons/Tiny Swords/Resources/Sheep/HappySheep_All.png" id="3_tionq"]
+[ext_resource type="Script" path="res://enimies/behaviors/follow_player.gd" id="4_mpwxd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vel4"]
+atlas = ExtResource("3_tionq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgeu2"]
+atlas = ExtResource("3_tionq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yww4k"]
+atlas = ExtResource("3_tionq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5aco"]
+atlas = ExtResource("3_tionq")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38wg2"]
+atlas = ExtResource("3_tionq")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2iw6"]
+atlas = ExtResource("3_tionq")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crys3"]
+atlas = ExtResource("3_tionq")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5528"]
+atlas = ExtResource("3_tionq")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g8rp"]
+atlas = ExtResource("3_tionq")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7re6e"]
+atlas = ExtResource("3_tionq")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8rbr"]
+atlas = ExtResource("3_tionq")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxwd5"]
+atlas = ExtResource("3_tionq")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg8mb"]
+atlas = ExtResource("3_tionq")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f5wx"]
+atlas = ExtResource("3_tionq")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_woiyp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vel4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgeu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yww4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5aco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38wg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2iw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crys3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5528")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g8rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7re6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8rbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxwd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg8mb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f5wx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3h8pw"]
+radius = 29.0
+height = 68.0
+
+[node name="GhostSheep" type="CharacterBody2D" groups=["enimies"]]
+motion_mode = 1
+script = ExtResource("1_a5n4o")
+healph = 2
+death_prefab = ExtResource("2_lxg8g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0.905882, 0.905882, 0.105882)
+position = Vector2(1, -32)
+scale = Vector2(1.57813, 1.79427)
+sprite_frames = SubResource("SpriteFrames_woiyp")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.143307
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -34)
+shape = SubResource("CapsuleShape2D_3h8pw")
+debug_color = Color(1, 0, 0, 0)
+
+[node name="FollowPlayer" type="Node" parent="."]
+script = ExtResource("4_mpwxd")
+speed = 2.0
+
+[node name="DamageDigitMarker" type="Marker2D" parent="."]
+position = Vector2(0, -68)

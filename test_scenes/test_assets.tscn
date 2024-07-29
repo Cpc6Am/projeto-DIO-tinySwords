@@ -1,0 +1,69 @@
+[gd_scene load_steps=14 format=3 uid="uid://gu78otm7lxy"]
+
+[ext_resource type="Texture2D" uid="uid://cxsajibam6ru8" path="res://addons/Tiny Swords/Factions/Knights/Troops/Dead/Dead.png" id="1_1gkkm"]
+[ext_resource type="Texture2D" uid="uid://dyax2xpcglbm5" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="2_onc4b"]
+[ext_resource type="Texture2D" uid="uid://c46c0bia75lgb" path="res://addons/Tiny Swords/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Blue_(NoArms).png" id="3_kqs5r"]
+[ext_resource type="Texture2D" uid="uid://cufqwypqoi4q" path="res://addons/Tiny Swords/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="4_3b8cv"]
+[ext_resource type="Texture2D" uid="uid://beg22j8tayspu" path="res://addons/Tiny Swords/Factions/Knights/Troops/Pawn/Yellow/Pawn_Yellow.png" id="5_trxt3"]
+[ext_resource type="Texture2D" uid="uid://br63jbjmt1f2v" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png" id="6_q47pj"]
+[ext_resource type="Texture2D" uid="uid://umu858v4dosh" path="res://addons/Tiny Swords/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="7_cs1ce"]
+[ext_resource type="Texture2D" uid="uid://cmpok0ncxhij1" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="8_v6opb"]
+[ext_resource type="Texture2D" uid="uid://dcxtgakv7aa1t" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Purple/Torch_Purple.png" id="9_ursj1"]
+[ext_resource type="Texture2D" uid="uid://bpjv881rsx4je" path="res://addons/Tiny Swords/Factions/Goblins/Troops/TNT/Dynamite/Dynamite.png" id="10_gsqvo"]
+[ext_resource type="Texture2D" uid="uid://diqthn68qwr8s" path="res://addons/Tiny Swords/Resources/Sheep/HappySheep_All.png" id="11_d1rwq"]
+[ext_resource type="Texture2D" uid="uid://dqhyuej57r4a0" path="res://addons/Tiny Swords/Resources/Sheep/HappySheep_Bouncing.png" id="12_1m3g7"]
+[ext_resource type="Texture2D" uid="uid://cvssnej001gl7" path="res://addons/Tiny Swords/Resources/Sheep/HappySheep_Idle.png" id="13_gilcn"]
+
+[node name="Test Assets" type="Node2D"]
+
+[node name="Dead" type="Sprite2D" parent="."]
+position = Vector2(449, -128)
+texture = ExtResource("1_1gkkm")
+
+[node name="WarriorPurple" type="Sprite2D" parent="."]
+position = Vector2(578, -1043)
+texture = ExtResource("2_onc4b")
+
+[node name="ArcherBlue(noArms)" type="Sprite2D" parent="."]
+position = Vector2(1805, -1686)
+texture = ExtResource("3_kqs5r")
+
+[node name="ArcherBlue" type="Sprite2D" parent="."]
+position = Vector2(2000, -845)
+texture = ExtResource("4_3b8cv")
+
+[node name="PawnYellow" type="Sprite2D" parent="."]
+position = Vector2(572, -2408)
+texture = ExtResource("5_trxt3")
+
+[node name="BarrelRed" type="Sprite2D" parent="."]
+position = Vector2(3311, -2452)
+texture = ExtResource("6_q47pj")
+
+[node name="TntRed" type="Sprite2D" parent="."]
+position = Vector2(3584, -1736)
+texture = ExtResource("7_cs1ce")
+
+[node name="TorchRed" type="Sprite2D" parent="."]
+position = Vector2(2057, -2452)
+texture = ExtResource("8_v6opb")
+
+[node name="TorchPurple" type="Sprite2D" parent="."]
+position = Vector2(2047, -3460)
+texture = ExtResource("9_ursj1")
+
+[node name="Dynamite" type="Sprite2D" parent="."]
+position = Vector2(3150, -1334)
+texture = ExtResource("10_gsqvo")
+
+[node name="HappySheepAll" type="Sprite2D" parent="."]
+position = Vector2(-2807, -107)
+texture = ExtResource("11_d1rwq")
+
+[node name="HappySheepBouncing" type="Sprite2D" parent="."]
+position = Vector2(-2936, -421)
+texture = ExtResource("12_1m3g7")
+
+[node name="HappySheepIdle" type="Sprite2D" parent="."]
+position = Vector2(-2807, -588)
+texture = ExtResource("13_gilcn")
